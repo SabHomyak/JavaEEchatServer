@@ -34,6 +34,7 @@ public class AuthorizationAccount extends HttpServlet {
                 }
             }
             if (str.equals("")) {
+                user.setStatus("Online");
                 list.getUserList().add(user);
                 str = "ok";
             }
