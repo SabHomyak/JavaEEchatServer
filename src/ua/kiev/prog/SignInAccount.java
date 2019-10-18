@@ -27,10 +27,10 @@ public class SignInAccount extends HttpServlet {
             }
             User user = gson.fromJson(baous.toString(), User.class);
             String str;
-            if(list.getUserList().contains(user)){
+            if (list.getUserList().contains(user)) {
                 str = "ok";
             } else {
-                str ="error";
+                str = "error";
             }
             os.write(str.getBytes());
         } catch (IOException e) {

@@ -20,8 +20,8 @@ public class GetListServlet extends HttpServlet {
         String user = req.getParameter("user");
         User user1 = list.getUserList().stream()
                 .filter(u -> u.getName().equals(user))
-				.findFirst()
-				.get();
+                .findFirst()
+                .get();
         user1.setStatus("Online");
         int from = 0;
         try {

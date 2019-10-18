@@ -12,10 +12,10 @@ import java.io.PrintWriter;
 public class GetChatUserServlet extends HttpServlet {
     private ListChatRoom list = ListChatRoom.getInstance();
     private Gson gson = new Gson();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("do");
-        try(PrintWriter pw = resp.getWriter()){
+        try (PrintWriter pw = resp.getWriter()) {
             pw.println(gson.toJson(list.getList()));
         }
     }

@@ -10,7 +10,7 @@ public class ListChatRoom {
     private List<ChatRoom> list = new LinkedList<>();
 
     private ListChatRoom() {
-        list.add(new ChatRoom("room","1234"));
+        list.add(new ChatRoom("room", "1234"));
     }
 
     public static ListChatRoom getInstance() {

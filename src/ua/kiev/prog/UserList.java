@@ -21,7 +21,8 @@ public class UserList {
     public  List<User> getUserList() {
         return userList;
     }
-    public String toJson(){
+
+    public String toJson() {
         return gson.toJson(userList);
     }
 }

@@ -22,13 +22,18 @@ public class AddChatRoomServlet extends HttpServlet {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] bytes = new byte[10240];
             int len;
-            while ((len = is.read(bytes))>0){
-                bos.write(bytes,0,len);
+            while ((len = is.read(bytes)) > 0) {
+                bos.write(bytes, 0, len);
             }
-            ChatRoom chatRoom = gson.fromJson(bos.toString(),ChatRoom.class);
-            if(listChatRoom.getList().contains(chatRoom)){
-                os.write("error".getBytes());
-            } else {
+            ChatRoom chatRoom = gson.fromJson(bos.toString(), ChatRoom.class);
+            boolean matchFound = false;
+            for (ChatRoom room : listChatRoom.getList()) {
+                if (room.getName().equals(chatRoom.getName())) {
+                    os.write("error".getBytes());
+                    matchFound = true;
+                }
+            }
+            if (!matchFound) {
                 listChatRoom.getList().add(chatRoom);
                 os.write("ok".getBytes());
             }

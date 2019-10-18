@@ -1,6 +1,6 @@
 package ua.kiev.prog;
 
-public class DropStatus implements Runnable{
+public class DropStatus implements Runnable {
     private static DropStatus dropStatus = new DropStatus();
     private static UserList list = UserList.getInstance();
 

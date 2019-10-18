@@ -42,8 +42,8 @@ public class ChatRoom {
         this.users = users;
     }
 
-    public void addUserToChat(String user){
-        if(users.contains(user)){
+    public void addUserToChat(String user) {
+        if (users.contains(user)) {
             System.out.println("Пользователь уже добавлен в комнату!");
         } else {
             users.add(user);
@@ -56,11 +56,12 @@ public class ChatRoom {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ChatRoom chatRoom = (ChatRoom) o;
-        return Objects.equals(name, chatRoom.name);
+        return Objects.equals(name, chatRoom.name) &&
+                Objects.equals(pass, chatRoom.pass);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, pass);
     }
 }
